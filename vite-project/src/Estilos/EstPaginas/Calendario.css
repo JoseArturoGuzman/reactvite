@@ -10,7 +10,7 @@
     justify-content: center;
     min-height: 100vh;
     background-color: #f0f4f8;
-    font-family: Arial, sans-serif;
+    font-family: "Poppins", sans-serif;
     padding: 20px;
     margin-left: 275px;  /* Ajusta este valor según el ancho de tu sidebar */
 }

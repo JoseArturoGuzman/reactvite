@@ -23,6 +23,8 @@ import {Materias} from './Paginas/Materias.jsx';
 import {Aulas} from './Paginas/Aulas.jsx';
 import {Secciones} from './Paginas/Secciones.jsx'
 import { ProfesorDashboard } from './Paginas/ProfesorDashboard.jsx';
+import { CalendarioAcademico } from './Paginas/CalendarioAcademico.jsx';
+import { PublicarNota } from './Paginas/PublicarCalificacion.jsx';
 
 const router = createBrowserRouter([
   {
@@ -155,6 +157,18 @@ const router = createBrowserRouter([
     path:"/ProfesorDashboard",
     element:(<ProtectedRoute>
       <ProfesorDashboard/>
+    </ProtectedRoute>)
+  },
+  {
+    path:"/CalendarioAcademico",
+    element:(<ProtectedRoute>
+      <CalendarioAcademico/>
+    </ProtectedRoute>)
+  },
+  {
+    path:"/PublicarNota",
+    element:(<ProtectedRoute>
+      <PublicarNota/>
     </ProtectedRoute>)
   }
 

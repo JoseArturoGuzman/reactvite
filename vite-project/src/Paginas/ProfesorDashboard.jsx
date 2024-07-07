@@ -1,5 +1,5 @@
 import React from "react";
-import Sidebar from "../Componentes/Sidebar2.jsx";
+import Sidebar from "../Componentes/SibarProfesor.jsx";
 import Header from "../Componentes/Header.jsx";
 import styles from "../Estilos/EstPaginas/ProfesorDashboard.module.css";
 import PhotoPerfil from '../assets/perfil sin foto.png';
