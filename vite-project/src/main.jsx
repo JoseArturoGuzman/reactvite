@@ -25,7 +25,7 @@ import {Secciones} from './Paginas/Secciones.jsx'
 import { ProfesorDashboard } from './Paginas/ProfesorDashboard.jsx';
 import { CalendarioAcademico } from './Paginas/CalendarioAcademico.jsx';
 import { PublicarNota } from './Paginas/PublicarCalificacion.jsx';
-
+import { PensumCarreraViewer} from "./Paginas/PensumCarreraViewer.jsx"
 const router = createBrowserRouter([
   {
     path: '/',
@@ -51,7 +51,7 @@ const router = createBrowserRouter([
     path: '/pensum-carrera',
     element: (
       <ProtectedRoute>
-        <PensumCarrera />
+       <PensumCarreraViewer/>
       </ProtectedRoute>
     ),
   },
@@ -170,7 +170,8 @@ const router = createBrowserRouter([
     element:(<ProtectedRoute>
       <PublicarNota/>
     </ProtectedRoute>)
-  }
+  },
+
 
 ]);
 
