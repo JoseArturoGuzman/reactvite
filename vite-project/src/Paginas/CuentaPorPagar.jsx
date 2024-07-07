@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../Estilos/EstPaginas/CuentaPorPagar.css';
+import styles from '../Estilos/EstPaginas/CuentaPorPagar.module.css';
 import visaMasterDiscoverLogo from '../assets/visa-master-discover.png';
 import amexLogo from '../assets/amex.png';
 import Header from '../Componentes/Header';
@@ -89,20 +89,20 @@ export function CuentaPorPagar() {
   };
 
   return (
-    <div className="cuenta-por-pagar">
+    <div className={styles.cuentaPorPagar}>
       <Header />
       <Sidebar />
-      <div className="cuenta-por-pagar-content">
+      <div className={styles.cuentaPorPagarContent}>
         <h2>$ Cuenta Por Pagar</h2>
-        <div className="payment-form">
+        <div className={styles.paymentForm}>
           <h3>Pago En Línea</h3>
           <form onSubmit={handleSubmit}>
             {paymentSuccess && (
-              <div className="payment-success-message">
+              <div className={styles.paymentSuccessMessage}>
                 ¡Pago realizado con éxito!
               </div>
             )}
-            <div className="card-selection">
+            <div className={styles.cardSelection}>
               <label>
                 <input
                   type="radio"
@@ -125,7 +125,7 @@ export function CuentaPorPagar() {
               </label>
             </div>
 
-            <div className="card-details">
+            <div className={styles.cardDetails}>
               <input
                 type="text"
                 placeholder="Numero de Tarjeta"
@@ -133,7 +133,7 @@ export function CuentaPorPagar() {
                 onChange={handleCardNumberChange}
                 maxLength={selectedCard === 'amex' ? 17 : 19} // 15 digits + 2 spaces for Amex, 16 digits + 3 spaces for others
               />
-              <div className="expiry-cvv">
+              <div className={styles.expiryCvv}>
                 <input
                   type="text"
                   placeholder="Fecha de Vencimiento (MM/YY)"
@@ -149,11 +149,11 @@ export function CuentaPorPagar() {
                   maxLength={selectedCard === 'amex' ? 4 : 3}
                 />
               </div>
-              {errors.expiryDate && <span className="error">{errors.expiryDate}</span>}
-              {errors.cvv && <span className="error">{errors.cvv}</span>}
+              {errors.expiryDate && <span className={styles.error}>{errors.expiryDate}</span>}
+              {errors.cvv && <span className={styles.error}>{errors.cvv}</span>}
             </div>
 
-            <div className="amount-section">
+            <div className={styles.amountSection}>
               <input
                 type="number"
                 placeholder="Monto a pagar"
@@ -161,13 +161,13 @@ export function CuentaPorPagar() {
                 onChange={(e) => setAmount(e.target.value)}
                 disabled={paymentSuccess}
               />
-              {errors.amount && <span className="error">{errors.amount}</span>}
-              <div className="monto-pendiente">
+              {errors.amount && <span className={styles.error}>{errors.amount}</span>}
+              <div className={styles.montoPendiente}>
                 Monto Pendiente: $ {montoPendiente.toFixed(2)} DOP
               </div>
             </div>
 
-            <button type="submit" disabled={paymentSuccess}>
+            <button type="submit" className={styles.button} disabled={paymentSuccess}>
               {paymentSuccess ? 'Pagado' : 'Pagar'}
             </button>
           </form>

@@ -35,12 +35,17 @@ export function Login() {
       login({ username, role: 'admin' });
       console.log('Login exitoso como administrador! Redirigiendo...');
       navigate('/AdminDashboard');
+    } else if (username === 'profesor' && password === 'profesor123') {
+      setError(false);
+      login({ username, role: 'profesor' });
+      console.log('Login exitoso como profesor! Redirigiendo...');
+      navigate('/ProfesorDashboard');
     } else {
       setError(true);
       console.log('Credenciales incorrectas');
     }
   };
-
+  
   return (
     <div className={styles["login-page"]}>
       <section className={styles["Login-Sect"]}>
